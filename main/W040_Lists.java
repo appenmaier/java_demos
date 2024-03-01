@@ -11,7 +11,7 @@ import model.VideoGameConsole;
  * @version 1.0
  *
  */
-public class DX40_Lists {
+public class W040_Lists {
 
   public static void main(String[] args) {
 

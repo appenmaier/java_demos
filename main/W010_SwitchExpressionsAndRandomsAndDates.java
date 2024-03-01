@@ -11,7 +11,7 @@ import java.util.Random;
  * @version 1.0
  *
  */
-public class DX10_SwitchExpressionsAndRandomsAndDates {
+public class W010_SwitchExpressionsAndRandomsAndDates {
 
   public static void main(String[] args) {
 
