@@ -12,7 +12,7 @@ import model.VideoGames;
  * @version 1.0
  *
  */
-public class W050_FilesAndWrappers {
+public class R050_FilesAndWrappers {
 
   public static void main(String[] args) throws IOException, InterruptedException {
 

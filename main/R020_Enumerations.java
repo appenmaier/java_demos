@@ -10,7 +10,7 @@ import model.VideoGameConsole;
  * @version 1.0
  *
  */
-public class W020_Enumerations {
+public class R020_Enumerations {
 
   public static void main(String[] args) {
 

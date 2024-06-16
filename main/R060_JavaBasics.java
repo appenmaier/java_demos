@@ -9,7 +9,7 @@ import java.util.Scanner;
  * @version 1.0
  *
  */
-public class T010_JavaBasics {
+public class R060_JavaBasics {
 
   /* Klassen (C/C++: Strukturen) */
   public static class Person {

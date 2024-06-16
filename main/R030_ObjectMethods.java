@@ -10,7 +10,7 @@ import model.VideoGameConsole;
  * @version 1.0
  *
  */
-public class W030_ObjectMethods {
+public class R030_ObjectMethods {
 
   public static void main(String[] args) {
 

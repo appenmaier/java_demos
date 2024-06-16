@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @version 1.0
  *
  */
-public class T020_ImportantBasicClasses {
+public class R070_ImportantBasicClasses {
 
   @SuppressWarnings("resource")
   public static void main(String[] args) {
