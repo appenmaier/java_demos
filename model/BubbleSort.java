@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Arrays;
+
 /**
  * Bubblesort
  *
@@ -23,18 +25,10 @@ public class BubbleSort {
         }
       }
       if (print) {
-        print(data);
+        System.out.println("Durchlauf " + counter + ": " + Arrays.toString(data));
       }
     }
     return data;
-  }
-
-  private static void print(int[] data) {
-    System.out.println("Durchlauf " + counter);
-    for (int x : data) {
-      System.out.println(x);
-    }
-    System.out.println();
   }
 
 }

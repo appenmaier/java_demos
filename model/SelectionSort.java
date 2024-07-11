@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Arrays;
+
 /**
  * Selectionsort
  *
@@ -10,14 +12,6 @@ package model;
 public class SelectionSort {
 
   private static int counter;
-
-  private static void print(int[] data) {
-    System.out.println("Durchlauf " + counter);
-    for (int x : data) {
-      System.out.println(x);
-    }
-    System.out.println();
-  }
 
   public static int[] selectionSort(int[] data, boolean print) {
     for (int i = 0; i < data.length - 1; i++) {
@@ -31,7 +25,7 @@ public class SelectionSort {
       data[index] = data[i];
       data[i] = temp;
       if (print) {
-        print(data);
+        System.out.println("Durchlauf " + counter + ": " + Arrays.toString(data));
       }
     }
     return data;

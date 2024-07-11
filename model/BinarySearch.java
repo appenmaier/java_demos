@@ -18,7 +18,7 @@ public class BinarySearch {
     while (left <= right) {
       counter++;
       center = left + ((right - left) / 2);
-      System.out.println("Zaehler-Mitte: " + counter + "-" + center);
+      System.out.println("Durchlauf: " + counter + ", Teiler: " + center);
       if (data[center] == key) {
         return center;
       } else if (data[center] > key) {

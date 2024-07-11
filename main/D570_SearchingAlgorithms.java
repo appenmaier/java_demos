@@ -17,33 +17,33 @@ public class D570_SearchingAlgorithms {
 
   public static void main(String[] args) {
 
-    int noValues = 100000;
-    int[] data = new int[noValues];
+    int numberOfValues = 1000;
+    int[] data = new int[numberOfValues];
 
     Random random = new Random();
 
-    for (int i = 0; i < noValues; i++) {
-      data[i] = random.nextInt(noValues * 10) + 1;
+    for (int i = 0; i < numberOfValues; i++) {
+      data[i] = random.nextInt(numberOfValues * 10) + 1;
     }
-    int key = data[random.nextInt(noValues)];
+    int key = data[random.nextInt(numberOfValues)];
     Arrays.sort(data);
 
     System.out.println("Suchwert: " + key);
     System.out.println();
 
     System.out.println("Linearsuche");
-    System.out.println("Index: " + LinearSearch.linearSearch(key, data) + " Zaehler: "
+    System.out.println("Index: " + LinearSearch.linearSearch(key, data) + ", Durchlauefe: "
         + LinearSearch.getCounter());
     System.out.println();
 
     System.out.println("Binaersuche");
-    System.out.println("Index: " + BinarySearch.binarySearch(key, data) + " Zaehler: "
+    System.out.println("Index: " + BinarySearch.binarySearch(key, data) + ", Durchlauefe: "
         + BinarySearch.getCounter());
     System.out.println();
 
     System.out.println("Interpolationssuche");
-    System.out.println("Index: " + InterpolationSearch.interpolationSearch(key, data) + " Zaehler: "
-        + InterpolationSearch.getCounter());
+    System.out.println("Index: " + InterpolationSearch.interpolationSearch(key, data)
+        + ", Durchlauefe: " + InterpolationSearch.getCounter());
 
   }
 

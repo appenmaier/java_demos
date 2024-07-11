@@ -23,7 +23,7 @@ public class InterpolationSearch {
       counter++;
       divider =
           left + (int) (((double) right - left) * (key - data[left]) / (data[right] - data[left]));
-      System.out.println("Zaehler-Teiler: " + counter + "-" + divider);
+      System.out.println("Durchlauf: " + counter + ", Teiler: " + divider);
       if (key > data[divider]) {
         left = divider + 1;
       } else if (key < data[divider]) {

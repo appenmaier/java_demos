@@ -18,6 +18,7 @@ public class LinearSearch {
   public static int linearSearch(int key, int[] data) {
     for (int i = 0; i < data.length; i++) {
       counter++;
+      System.out.println("Durchlauf: " + counter);
       if (data[i] == key) {
         return i;
       }

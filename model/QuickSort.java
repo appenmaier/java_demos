@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Arrays;
+
 /**
  * Quicksort
  *
@@ -10,14 +12,6 @@ package model;
 public class QuickSort {
 
   private static int counter;
-
-  private static void print(int[] data) {
-    System.out.println("Durchlauf " + counter);
-    for (int x : data) {
-      System.out.println(x);
-    }
-    System.out.println();
-  }
 
   public static int[] quickSort(int[] data, boolean print) {
     return sort(data, 0, data.length - 1, print);
@@ -44,7 +38,7 @@ public class QuickSort {
       }
     }
     if (print) {
-      print(data);
+      System.out.println("Durchlauf " + counter + ": " + Arrays.toString(data));
     }
     if (left < j) {
       sort(data, left, j, print);
