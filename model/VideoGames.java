@@ -15,7 +15,7 @@ import java.util.Scanner;
 public class VideoGames {
 
   public static ArrayList<VideoGame> getVideoGames() throws FileNotFoundException {
-    File file = new File("src/resources/videogames.txt");
+    File file = new File("resources/videogames.txt");
 
     Scanner scanner = new Scanner(file);
 

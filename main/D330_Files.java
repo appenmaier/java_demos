@@ -8,7 +8,7 @@ import model.Person;
 
 /**
  * Arbeiten mit Dateien
- * 
+ *
  * @author Daniel Appenmaier
  * @version 1.0
  *
@@ -26,10 +26,10 @@ public class D330_Files {
     System.out.println("userHomeDirectory: " + userHomeDirectory);
 
     /* Absolute Pfadangaben */
-    // File file = new File(userWorkDirectory + "\\src\\resources\\persons.txt");
+    // File file = new File(userWorkDirectory + "\\resources\\persons.txt");
 
     /* Relative Pfadangaben */
-    File file = new File("src/resources/persons.txt"); // relative Pfadangabe
+    File file = new File("resources/persons.txt"); // relative Pfadangabe
 
     /* Zeichenbasiertes Lesen von Dateien */
     ArrayList<Person> persons = new ArrayList<>();

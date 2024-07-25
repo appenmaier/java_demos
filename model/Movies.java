@@ -9,7 +9,7 @@ import model.Movie.Genre;
 
 /**
  * Filme
- * 
+ *
  * @author Daniel Appenmaier
  * @version 1.0
  *
@@ -19,7 +19,7 @@ public class Movies {
   public static ArrayList<Movie> getMovies(int maxMovies, int minVotes)
       throws FileNotFoundException {
     ArrayList<Movie> movies = new ArrayList<>();
-    File file = new File("src/resources/movies.csv");
+    File file = new File("resources/movies.csv");
     Scanner scanner = new Scanner(file);
 
     while (scanner.hasNextLine()) {
