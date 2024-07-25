@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Zeichenorientiertes Lesen
- * 
+ *
  * @author Daniel Appenmaier
  * @version 1.0
  *
@@ -16,7 +16,7 @@ public class D550_CharacterBasedReading {
 
   public static void main(String[] args) {
 
-    File file = new File("src/resources/persons.txt");
+    File file = new File("resources/persons.txt");
 
     try (FileReader fileReader = new FileReader(file);
         BufferedReader bufferedReader = new BufferedReader(fileReader)) {

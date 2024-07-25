@@ -7,7 +7,7 @@ import java.io.IOException;
 
 /**
  * Zeichenorientiertes Schreiben
- * 
+ *
  * @author Daniel Appenmaier
  * @version 1.0
  *
@@ -16,7 +16,7 @@ public class D540_CharacterBasedWriting {
 
   public static void main(String[] args) {
 
-    File file = new File("src/resources/persons.txt");
+    File file = new File("resources/persons.txt");
 
     /* bis Java 7 */
     // BufferedWriter bufferedWriter = null;

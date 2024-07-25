@@ -17,8 +17,8 @@ public class D560_Serialization {
       throws IOException, InterruptedException, ClassNotFoundException {
 
     Log log = new Log();
-    File file = new File("src/resources/log.dat");
-    /* version 1.0: File file = new File("src/resources/log.txt"); */
+    File file = new File("resources/log.dat");
+    /* version 1.0: File file = new File("resources/log.txt"); */
 
     if (file.exists()) {
       log.load(file);
