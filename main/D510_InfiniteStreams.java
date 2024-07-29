@@ -1,6 +1,5 @@
 package main;
 
-
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -21,7 +20,8 @@ public class D510_InfiniteStreams {
 
     ArrayList<Movie> movies = Movies.getMovies(1000, 100000);
 
-    Stream.generate(() -> new Random().nextInt(movies.size())).limit(10)
+    Stream.generate(() -> new Random().nextInt(movies.size()))
+        .limit(10)
         .forEach(r -> System.out.println(movies.get(r)));
 
   }

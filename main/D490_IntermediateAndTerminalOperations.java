@@ -33,19 +33,21 @@ public class D490_IntermediateAndTerminalOperations {
   private static Map<String, List<Movie>> getAllActionMoviesByYear() {
     System.out.println("Alle Actionfilme zu jedem Jahr");
 
-    Map<String, List<Movie>> allActionMoviesByYear =
-        movies.stream().filter(m -> m.genres().contains(Genre.ACTION))
-            .collect(Collectors.groupingBy(m -> m.year()));
+    Map<String, List<Movie>> allActionMoviesByYear = movies.stream()
+        .filter(m -> m.genres().contains(Genre.ACTION))
+        .collect(Collectors.groupingBy(m -> m.year()));
     return allActionMoviesByYear;
   }
 
   private static List<Movie> getAllComedyMoviesWithRuntimeInMinutesLT90() {
     System.out.println("Alle Komedien mit einer Laufzeit von maximal 90 Minuten");
 
-    List<Movie> allComedyMoviesWithRuntimeInMinutesLT90 =
-        movies.stream().filter(m -> m.genres().contains(Genre.COMEDY)).peek(System.out::println)
-            .filter(m -> m.runtimeInMinutes() < 90).peek(System.out::println)
-            .collect(Collectors.toList());
+    List<Movie> allComedyMoviesWithRuntimeInMinutesLT90 = movies.stream()
+        .filter(m -> m.genres().contains(Genre.COMEDY))
+        .peek(System.out::println)
+        .filter(m -> m.runtimeInMinutes() < 90)
+        .peek(System.out::println)
+        .collect(Collectors.toList());
     return allComedyMoviesWithRuntimeInMinutesLT90;
   }
 
@@ -74,9 +76,9 @@ public class D490_IntermediateAndTerminalOperations {
   private static Optional<Movie> getLongestComedyMovie() {
     System.out.println("Die laengste Komoedie");
 
-    Optional<Movie> longestComedyMovie =
-        movies.stream().filter(m -> m.genres().contains(Genre.COMEDY)).max(
-            (m1, m2) -> Integer.valueOf(m2.runtimeInMinutes()).compareTo(m1.runtimeInMinutes()));
+    Optional<Movie> longestComedyMovie = movies.stream()
+        .filter(m -> m.genres().contains(Genre.COMEDY))
+        .max((m1, m2) -> Integer.valueOf(m2.runtimeInMinutes()).compareTo(m1.runtimeInMinutes()));
     return longestComedyMovie;
   }
 
@@ -144,15 +146,20 @@ public class D490_IntermediateAndTerminalOperations {
   private static void printAllThrillersWithRatingBE7() {
     System.out.println("Alle Thriller mit einer Bewertung von min. 7 in der Form \"Title (Jahr)\"");
 
-    movies.stream().filter(m -> m.genres().contains(Genre.THRILLER)).filter(m -> m.rating() >= 7)
-        .map(m -> m.title() + " (" + m.year() + ")").forEach(System.out::println);
+    movies.stream()
+        .filter(m -> m.genres().contains(Genre.THRILLER))
+        .filter(m -> m.rating() >= 7)
+        .map(m -> m.title() + " (" + m.year() + ")")
+        .forEach(System.out::println);
     System.out.println();
   }
 
   private static void printTop5HorrorMovies() {
     System.out.println("Die 5 besten Filme");
 
-    movies.stream().sorted((m1, m2) -> Double.valueOf(m2.rating()).compareTo(m1.rating())).limit(5)
+    movies.stream()
+        .sorted((m1, m2) -> Double.valueOf(m2.rating()).compareTo(m1.rating()))
+        .limit(5)
         .forEach(System.out::println);
     System.out.println();
   }

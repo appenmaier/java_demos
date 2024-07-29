@@ -4,8 +4,8 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
 import model.Movie;
-import model.Movies;
 import model.Movie.Genre;
+import model.Movies;
 
 /**
  * Die Java Stream API
@@ -40,8 +40,10 @@ public class D480_JavaStreamAPI {
     System.out.println();
 
     /* Funktionale Loesung */
-    movies.stream().filter(m -> m.genres().contains(Genre.DRAMA))
-        .filter(m -> m.year().compareTo("1990") >= 0).filter(m -> m.year().compareTo("2000") < 0)
+    movies.stream()
+        .filter(m -> m.genres().contains(Genre.DRAMA))
+        .filter(m -> m.year().compareTo("1990") >= 0)
+        .filter(m -> m.year().compareTo("2000") < 0)
         .sorted((m1, m2) -> Double.valueOf(m2.rating()).compareTo(m1.rating()))
         .forEach(System.out::println);
 

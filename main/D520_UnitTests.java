@@ -13,15 +13,14 @@ public class D520_UnitTests {
 
     /*
      * version 1.0: BMICalculatorTest test = new BMICalculatorTest(1.8, 85);
-     * 
+     *
      * System.out.print("Testfall 1: "); try { test.testGetBmi(); System.out.println("gruen"); }
      * catch (Exception e) { System.out.println("rot"); }
-     * 
+     *
      * System.out.print("Testfall 2: "); try { test.testGetBmiCategory();
      * System.out.println("gruen"); } catch (Exception e) { System.out.println("rot"); }
      */
 
   }
-
 
 }
