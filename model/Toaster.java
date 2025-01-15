@@ -9,14 +9,14 @@ package model;
  */
 public class Toaster implements WiredDevice {
 
-  @Override
-  public void plugIn() {
-    System.out.println("Ich, der Toaster, bin eingesteckt");
-  }
+   @Override
+   public void plugIn() {
+      System.out.println("Ich, der Toaster, bin eingesteckt");
+   }
 
-  @Override
-  public void pullThePlug() {
-    System.out.println("Ich, der Toaster, bin ausgesteckt");
-  }
+   @Override
+   public void pullThePlug() {
+      System.out.println("Ich, der Toaster, bin ausgesteckt");
+   }
 
 }

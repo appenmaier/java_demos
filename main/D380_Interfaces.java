@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+
 import model.LightBulb;
 import model.PlugType;
 import model.TableLamp;
@@ -16,24 +17,24 @@ import model.WiredDevice;
  */
 public class D380_Interfaces {
 
-  public static void main(String[] args) {
+   public static void main(String[] args) {
 
-    ArrayList<WiredDevice> wiredDevices = new ArrayList<>();
+      ArrayList<WiredDevice> wiredDevices = new ArrayList<>();
 
-    // wiredDevices.add(new WiredDevice());
-    wiredDevices.add(new Toaster()); // Upcast
-    wiredDevices.add(new TableLamp(PlugType.TYPE_F)); // Upcast
+      // wiredDevices.add(new WiredDevice());
+      wiredDevices.add(new Toaster()); // Upcast
+      wiredDevices.add(new TableLamp(PlugType.TYPE_F)); // Upcast
 
-    for (WiredDevice wiredDevice : wiredDevices) {
-      /* version 1.0: wiredDevice.plugIn(); // (Dynamische) Polymorphie */
-      if (wiredDevice instanceof TableLamp) {
-        TableLamp t = (TableLamp) wiredDevice; // Downcast
-        t.changeLightBulb(new LightBulb());
-        t.switchOn();
+      for (WiredDevice wiredDevice : wiredDevices) {
+         /* version 1.0: wiredDevice.plugIn(); // (Dynamische) Polymorphie */
+         if (wiredDevice instanceof TableLamp) {
+            TableLamp t = (TableLamp) wiredDevice; // Downcast
+            t.changeLightBulb(new LightBulb());
+            t.switchOn();
+         }
+         System.out.println(wiredDevice); // (Dynamische) Polymorphie
       }
-      System.out.println(wiredDevice); // (Dynamische) Polymorphie
-    }
 
-  }
+   }
 
 }

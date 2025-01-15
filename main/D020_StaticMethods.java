@@ -11,12 +11,12 @@ import model.Printer;
  */
 public class D020_StaticMethods {
 
-  public static void main(String[] args) {
-    Printer.printHelloWorld();
-    Printer.printHelloWorld();
-    Printer.printText("Winter");
-    Printer.printText("is");
-    Printer.printText("coming");
-  }
+   public static void main(String[] args) {
+      Printer.printHelloWorld();
+      Printer.printHelloWorld();
+      Printer.printText("Winter");
+      Printer.printText("is");
+      Printer.printText("coming");
+   }
 
 }

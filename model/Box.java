@@ -9,22 +9,22 @@ package model;
  */
 public class Box<T> {
 
-  private T content;
-  /* version 1.0: private Object content; */
+   private T content;
+   /* version 1.0: private Object content; */
 
-  public Box() {
+   public Box() {
 
-  }
+   }
 
-  public T getContent() {
-    return content;
-  }
-  /* version 1.0: public Object getContent() { return content; } */
+   public T getContent() {
+      return content;
+   }
+   /* version 1.0: public Object getContent() { return content; } */
 
-  public void setContent(T content) {
-    this.content = content;
-  }
-  /* version 1.0: public void setContent(Object content) { this.content = content; } */
+   public void setContent(T content) {
+      this.content = content;
+   }
+   /* version 1.0: public void setContent(Object content) { this.content = content; } */
 
 }
 /* 1.0: public class Box {...} */

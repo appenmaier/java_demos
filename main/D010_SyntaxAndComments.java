@@ -9,11 +9,11 @@ package main;
  */
 public class D010_SyntaxAndComments {
 
-  public static void main(String[] args) {
-    String text = "Hello World"; // Deklaration und Initialisierung
+   public static void main(String[] args) {
+      String text = "Hello World"; // Deklaration und Initialisierung
 
-    /* Ausgabe */
-    System.out.print(text);
-  }
+      /* Ausgabe */
+      System.out.print(text);
+   }
 
 }

@@ -9,10 +9,10 @@ package model;
  */
 public class AlreadyPluggedInException extends Exception {
 
-  private static final long serialVersionUID = 1L;
+   private static final long serialVersionUID = 1L;
 
-  public AlreadyPluggedInException() {
-    super("Das Geraet ist bereits eingesteckt");
-  }
+   public AlreadyPluggedInException() {
+      super("Das Geraet ist bereits eingesteckt");
+   }
 
 }

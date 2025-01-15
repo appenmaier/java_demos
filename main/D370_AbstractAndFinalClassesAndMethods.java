@@ -11,12 +11,12 @@ import model.Light;
  */
 public class D370_AbstractAndFinalClassesAndMethods {
 
-  @SuppressWarnings("unused")
-  public static void main(String[] args) {
+   @SuppressWarnings("unused")
+   public static void main(String[] args) {
 
-    Light light;
-    // light = new Light();
+      Light light;
+      // light = new Light();
 
-  }
+   }
 
 }

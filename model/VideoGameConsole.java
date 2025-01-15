@@ -9,16 +9,16 @@ package model;
  */
 public enum VideoGameConsole {
 
-  PS4("Playstation 4"), SWITCH("Nintendo Switch");
+   PS4("Playstation 4"), SWITCH("Nintendo Switch");
 
-  private final String description;
+   private final String description;
 
-  VideoGameConsole(String description) {
-    this.description = description;
-  }
+   VideoGameConsole(String description) {
+      this.description = description;
+   }
 
-  public String description() {
-    return description;
-  }
+   public String description() {
+      return description;
+   }
 
 }

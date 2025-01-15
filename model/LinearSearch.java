@@ -9,21 +9,21 @@ package model;
  */
 public class LinearSearch {
 
-  private static int counter;
+   private static int counter;
 
-  public static int getCounter() {
-    return counter;
-  }
+   public static int getCounter() {
+      return counter;
+   }
 
-  public static int linearSearch(int key, int[] data) {
-    for (int i = 0; i < data.length; i++) {
-      counter++;
-      System.out.println("Durchlauf: " + counter);
-      if (data[i] == key) {
-        return i;
+   public static int linearSearch(int key, int[] data) {
+      for (int i = 0; i < data.length; i++) {
+         counter++;
+         System.out.println("Durchlauf: " + counter);
+         if (data[i] == key) {
+            return i;
+         }
       }
-    }
-    return -1;
-  }
+      return -1;
+   }
 
 }

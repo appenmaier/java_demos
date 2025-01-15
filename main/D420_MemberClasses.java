@@ -1,6 +1,5 @@
 package main;
 
-
 import model.Order;
 import model.Order.OrderItem;
 
@@ -13,13 +12,13 @@ import model.Order.OrderItem;
  */
 public class D420_MemberClasses {
 
-  public static void main(String[] args) {
+   public static void main(String[] args) {
 
-    Order order = new Order();
-    OrderItem orderItem = order.new OrderItem();
-    orderItem.description = "Bestellposition 1";
-    order.orderItems.add(orderItem);
+      Order order = new Order();
+      OrderItem orderItem = order.new OrderItem();
+      orderItem.description = "Bestellposition 1";
+      order.orderItems.add(orderItem);
 
-  }
+   }
 
 }

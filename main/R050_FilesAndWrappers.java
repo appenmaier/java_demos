@@ -2,6 +2,7 @@ package main;
 
 import java.io.IOException;
 import java.util.ArrayList;
+
 import model.VideoGame;
 import model.VideoGames;
 
@@ -14,14 +15,14 @@ import model.VideoGames;
  */
 public class R050_FilesAndWrappers {
 
-  public static void main(String[] args) throws IOException, InterruptedException {
+   public static void main(String[] args) throws IOException, InterruptedException {
 
-    ArrayList<VideoGame> videoGames = VideoGames.getVideoGames();
+      ArrayList<VideoGame> videoGames = VideoGames.getVideoGames();
 
-    for (VideoGame v : videoGames) {
-      System.out.println(v);
-    }
+      for (VideoGame v : videoGames) {
+         System.out.println(v);
+      }
 
-  }
+   }
 
 }

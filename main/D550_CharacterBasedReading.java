@@ -14,26 +14,26 @@ import java.io.IOException;
  */
 public class D550_CharacterBasedReading {
 
-  public static void main(String[] args) {
+   public static void main(String[] args) {
 
-    File file = new File("resources/persons.txt");
+      File file = new File("resources/persons.txt");
 
-    try (FileReader fileReader = new FileReader(file);
-        BufferedReader bufferedReader = new BufferedReader(fileReader)) {
-      String line;
-      while ((line = bufferedReader.readLine()) != null) {
-        String[] tokens = line.split(";");
-        String name = tokens[0];
-        int age = Integer.valueOf(tokens[1]);
-        char gender = tokens[2].charAt(0);
-        System.out.println("name: " + name);
-        System.out.println("age: " + age);
-        System.out.println("gender: " + gender);
+      try (FileReader fileReader = new FileReader(file);
+            BufferedReader bufferedReader = new BufferedReader(fileReader)) {
+         String line;
+         while ((line = bufferedReader.readLine()) != null) {
+            String[] tokens = line.split(";");
+            String name = tokens[0];
+            int age = Integer.valueOf(tokens[1]);
+            char gender = tokens[2].charAt(0);
+            System.out.println("name: " + name);
+            System.out.println("age: " + age);
+            System.out.println("gender: " + gender);
+         }
+      } catch (IOException e) {
+         e.printStackTrace();
       }
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
 
-  }
+   }
 
 }

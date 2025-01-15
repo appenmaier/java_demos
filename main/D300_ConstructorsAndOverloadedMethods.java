@@ -11,12 +11,12 @@ import model.LightBulb;
  */
 public class D300_ConstructorsAndOverloadedMethods {
 
-  @SuppressWarnings("unused")
-  public static void main(String[] args) {
+   @SuppressWarnings("unused")
+   public static void main(String[] args) {
 
-    /* version 1.0: LightBulb redLightBulb = new LightBulb("rot"); */
-    LightBulb whiteLightBulb = new LightBulb();
+      /* version 1.0: LightBulb redLightBulb = new LightBulb("rot"); */
+      LightBulb whiteLightBulb = new LightBulb();
 
-  }
+   }
 
 }

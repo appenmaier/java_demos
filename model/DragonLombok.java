@@ -24,8 +24,8 @@ import lombok.ToString;
 @ToString
 public class DragonLombok {
 
-  private final String name;
-  private final DragonType type;
-  private int age;
+   private final String name;
+   private final DragonType type;
+   private int age;
 
 }

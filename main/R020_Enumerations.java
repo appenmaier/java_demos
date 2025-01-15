@@ -12,19 +12,20 @@ import model.VideoGameConsole;
  */
 public class R020_Enumerations {
 
-  public static void main(String[] args) {
+   public static void main(String[] args) {
 
-    VideoGame totk = new VideoGame("The Legend of Zelda - Tears of the Kingdom",
-        VideoGameConsole.SWITCH, "2023", 9.6);
+      VideoGame totk = new VideoGame("The Legend of Zelda - Tears of the Kingdom",
+            VideoGameConsole.SWITCH,
+            "2023",
+            9.6);
 
-    System.out.println(totk.title() + " (" + totk.console()
-        .description() + ")");
-    System.out.println();
+      System.out.println(totk.title() + " (" + totk.console().description() + ")");
+      System.out.println();
 
-    for (VideoGameConsole g : VideoGameConsole.values()) {
-      System.out.println(g.ordinal() + " - " + g.name() + " - " + g.description());
-    }
+      for (VideoGameConsole g : VideoGameConsole.values()) {
+         System.out.println(g.ordinal() + " - " + g.name() + " - " + g.description());
+      }
 
-  }
+   }
 
 }

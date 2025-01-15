@@ -9,9 +9,9 @@ package model;
  */
 public interface WiredDevice {
 
-  void plugIn() throws AlreadyPluggedInException;
-  /* version 1.0: void plugIn() */
+   void plugIn() throws AlreadyPluggedInException;
+   /* version 1.0: void plugIn() */
 
-  void pullThePlug();
+   void pullThePlug();
 
 }
