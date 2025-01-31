@@ -10,7 +10,6 @@ import java.util.List;
  * @version 4.0
  *
  */
-@SuppressWarnings("unused")
 public record Movie(String title, List<Genre> genres, String year, int runtimeInMinutes,
       double rating, int votes) implements Comparable<Movie> {
 
