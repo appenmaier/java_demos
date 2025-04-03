@@ -3,6 +3,7 @@ package main;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.List;
 
 import model.Movie;
 import model.Movie.Genre;
@@ -18,8 +19,7 @@ import model.Movies;
 public class D480_JavaStreamAPI {
 
    public static void main(String[] args) throws FileNotFoundException {
-
-      ArrayList<Movie> movies = Movies.getMovies(10, 100000);
+      List<Movie> movies = Movies.getMovies(10, 100000);
 
       movies.forEach(System.out::println);
       System.out.println();
@@ -32,9 +32,7 @@ public class D480_JavaStreamAPI {
             dramas.add(m);
          }
       }
-
       Collections.sort(dramas, (m1, m2) -> Double.valueOf(m2.rating()).compareTo(m1.rating()));
-
       for (Movie m : dramas) {
          System.out.println(m);
       }
@@ -47,7 +45,6 @@ public class D480_JavaStreamAPI {
             .filter(m -> m.year().compareTo("2000") < 0)
             .sorted((m1, m2) -> Double.valueOf(m2.rating()).compareTo(m1.rating()))
             .forEach(System.out::println);
-
    }
 
 }

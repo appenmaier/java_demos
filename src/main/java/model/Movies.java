@@ -3,6 +3,7 @@ package model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,12 +18,10 @@ import model.Movie.Genre;
  */
 public class Movies {
 
-   public static ArrayList<Movie> getMovies(int maxMovies, int minVotes)
-         throws FileNotFoundException {
-      ArrayList<Movie> movies = new ArrayList<>();
-      File file = new File("resources/movies.csv");
+   public static List<Movie> getMovies(int maxMovies, int minVotes) throws FileNotFoundException {
+      List<Movie> movies = new ArrayList<>();
+      File file = new File("src/main/resources/movies.csv");
       Scanner scanner = new Scanner(file);
-
       while (scanner.hasNextLine()) {
          String line = scanner.nextLine();
          String[] tokens = line.split(";");

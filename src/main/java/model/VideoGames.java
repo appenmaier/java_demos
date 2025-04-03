@@ -3,6 +3,7 @@ package model;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -14,13 +15,12 @@ import java.util.Scanner;
  */
 public class VideoGames {
 
-   public static ArrayList<VideoGame> getVideoGames() throws FileNotFoundException {
-      File file = new File("resources/videogames.txt");
+   public static List<VideoGame> getVideoGames() throws FileNotFoundException {
+      File file = new File("src/main/resources/videogames.txt");
 
       Scanner scanner = new Scanner(file);
 
       ArrayList<VideoGame> videoGames = new ArrayList<>();
-
       while (scanner.hasNextLine()) {
          String line = scanner.nextLine();
          String[] tokens = line.split(";");

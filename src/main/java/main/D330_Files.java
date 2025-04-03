@@ -17,7 +17,6 @@ import model.Person;
 public class D330_Files {
 
    public static void main(String[] args) throws FileNotFoundException {
-
       /* relevante Systemeigenschaften */
       String fileSeparator = System.getProperty("file.separator");
       System.out.println("fileSeparator: " + fileSeparator);
@@ -27,16 +26,15 @@ public class D330_Files {
       System.out.println("userHomeDirectory: " + userHomeDirectory);
 
       /* Absolute Pfadangaben */
-      // File file = new File(userWorkDirectory + "\\resources\\persons.txt");
+      // File file = new File(userWorkDirectory + "\\src\\main\\resources\\persons.txt");
 
       /* Relative Pfadangaben */
-      File file = new File("resources/persons.txt"); // relative Pfadangabe
+      File file = new File("src/main/resources/persons.txt"); // relative Pfadangabe
 
       /* Zeichenbasiertes Lesen von Dateien */
       ArrayList<Person> persons = new ArrayList<>();
 
       Scanner scanner = new Scanner(file);
-
       while (scanner.hasNextLine()) {
          String line = scanner.nextLine();
          String[] tokens = line.split(";");
@@ -46,13 +44,10 @@ public class D330_Files {
          Person p = new Person(name, age, gender);
          persons.add(p);
       }
-
       for (int i = 0; i < persons.size(); i++) {
          System.out.println(persons.get(i).toString());
       }
-
       scanner.close();
-
    }
 
 }

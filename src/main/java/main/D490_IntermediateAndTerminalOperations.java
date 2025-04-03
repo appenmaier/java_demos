@@ -1,7 +1,6 @@
 package main;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -21,7 +20,7 @@ import model.Movies;
  */
 public class D490_IntermediateAndTerminalOperations {
 
-   private static ArrayList<Movie> movies;
+   private static List<Movie> movies;
 
    private static List<Movie> getAllActionMoviesAsList() {
       System.out.println("Alle Actionfilme als Liste");
@@ -95,7 +94,6 @@ public class D490_IntermediateAndTerminalOperations {
    }
 
    public static void main(String[] args) throws FileNotFoundException {
-
       movies = Movies.getMovies(50, 50000);
       movies.forEach(System.out::println);
       System.out.println();
@@ -144,7 +142,6 @@ public class D490_IntermediateAndTerminalOperations {
 
       /* peek, filter, forEach */
       getAllComedyMoviesWithRuntimeInMinutesLT90();
-
    }
 
    private static void printAllThrillersWithRatingBE7() {

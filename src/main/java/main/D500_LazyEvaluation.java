@@ -1,7 +1,7 @@
 package main;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
+import java.util.List;
 
 import model.Movie;
 import model.Movie.Genre;
@@ -17,8 +17,7 @@ import model.Movies;
 public class D500_LazyEvaluation {
 
    public static void main(String[] args) throws FileNotFoundException {
-
-      ArrayList<Movie> movies = Movies.getMovies(10, 100000);
+      List<Movie> movies = Movies.getMovies(10, 100000);
 
       movies.stream().filter(m -> {
          System.out.println(m + ": filter 1");
@@ -30,7 +29,6 @@ public class D500_LazyEvaluation {
          System.out.println(m + ": map");
          return m.title();
       }).forEach(System.out::println);
-
    }
 
 }

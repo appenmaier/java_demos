@@ -15,8 +15,7 @@ import java.io.IOException;
 public class D540_CharacterBasedWriting {
 
    public static void main(String[] args) {
-
-      File file = new File("resources/persons.txt");
+      File file = new File("src/main/resources/persons.txt");
 
       /* bis Java 7 */
       // BufferedWriter bufferedWriter = null;
@@ -54,7 +53,6 @@ public class D540_CharacterBasedWriting {
       } catch (IOException e) {
          e.printStackTrace();
       }
-
    }
 
 }

@@ -15,9 +15,7 @@ import java.io.IOException;
 public class D550_CharacterBasedReading {
 
    public static void main(String[] args) {
-
-      File file = new File("resources/persons.txt");
-
+      File file = new File("src/main/resources/persons.txt");
       try (FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader)) {
          String line;
@@ -33,7 +31,6 @@ public class D550_CharacterBasedReading {
       } catch (IOException e) {
          e.printStackTrace();
       }
-
    }
 
 }
