@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Kabelgebundenes Geraet
+ * Wired Device
  * 
  * @author Daniel Appenmaier
  * @version 2.0
@@ -10,7 +10,6 @@ package model;
 public interface WiredDevice {
 
    void plugIn() throws AlreadyPluggedInException;
-   /* version 1.0: void plugIn() */
 
    void pullThePlug();
 

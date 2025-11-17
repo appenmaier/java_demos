@@ -3,7 +3,7 @@ package main;
 import java.util.Random;
 
 /**
- * Pseudozufallszahlen und Mathematische Berechnungen
+ * Calculations and Pseudo Random Numbers
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -12,8 +12,7 @@ import java.util.Random;
 public class D100_CalculationsAndPseudoRandomNumbers {
 
    public static void main(String[] args) {
-
-      /* Mathematische Berechnungen mit Hilfe der Klasse Math */
+      /* Mathematische Berechnungen */
       double result = Math.sqrt(64);
       System.out.println("result: " + result);
 
@@ -23,10 +22,9 @@ public class D100_CalculationsAndPseudoRandomNumbers {
       randomNumber = (int) (Math.random() * 100) + 1;
       System.out.println("randomNumber: " + randomNumber);
 
-      Random rd = new Random();
-      randomNumber = rd.nextInt(100) + 1;
+      Random random = new Random();
+      randomNumber = random.nextInt(1, 101);
       System.out.println("randomNumber: " + randomNumber);
-
    }
 
 }

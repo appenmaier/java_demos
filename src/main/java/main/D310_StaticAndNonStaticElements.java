@@ -1,9 +1,9 @@
 package main;
 
-import model.TableLamp;
+import model.TableLight;
 
 /**
- * Statische und nicht-statische Elemente
+ * Static and nonstatic Elements
  * 
  * @author Daniel Appenmaier
  * @version 2.0
@@ -12,16 +12,13 @@ import model.TableLamp;
 public class D310_StaticAndNonStaticElements {
 
    public static void main(String[] args) {
+      System.out.println(TableLight.getNumberOfTableLights());
 
-      System.out.println(TableLamp.getNumberOfTableLamps());
+      // TableLight tableLight1 = new TableLight();
+      // TableLight tableLight2 = new TableLight();
+      // TableLight tableLight3 = new TableLight();
 
-      /*
-       * version 1.0: TableLamp tableLamp1 = new TableLamp(); TableLamp tableLamp2 = new
-       * TableLamp(); TableLamp tableLamp3 = new TableLamp();
-       */
-
-      System.out.println(TableLamp.getNumberOfTableLamps());
-
+      System.out.println(TableLight.getNumberOfTableLights());
    }
 
 }

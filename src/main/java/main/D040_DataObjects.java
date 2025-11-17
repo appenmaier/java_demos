@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Variable Datenobjekte
+ * Data Objects
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -9,26 +9,34 @@ package main;
  */
 public class D040_DataObjects {
 
+   /* Konstanten */
+   final static double PI = 3.14159265359;
+
    @SuppressWarnings("unused")
    public static void main(String[] args) {
-
-      /* Deklaration von variablen Datenobjekten */
+      /* Deklaration */
       int i;
-      String name;
-      String firstName, familyName, fullName, firstNameAndFamilyName; // Kamelschreibweise
-      boolean isHappy;
+      String name, firstName, familyName, fullName, firstNameAndFamilyName;
+      double sizeInM;
 
       /* Initialisierung */
       i = 5;
       name = "Hans Peter";
-      isHappy = true;
-
+      sizeInM = 1.79;
       char gender = 'M';
 
       System.out.println("i: " + i);
       System.out.println("name: " + name);
-      System.out.println("isHappy: " + isHappy);
+      System.out.println("sizeInM: " + sizeInM);
       System.out.println("gender: " + gender);
+
+      /* Wertzuweisungen */
+      i = 7;
+      gender = 'W';
+
+      /* Unveränderliche Datenobjekte */
+      final String text = "Java";
+      // text = "Python"; // Syntaxfehler
    }
 
 }

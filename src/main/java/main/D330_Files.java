@@ -8,7 +8,7 @@ import java.util.Scanner;
 import model.Person;
 
 /**
- * Arbeiten mit Dateien
+ * Files
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -18,15 +18,13 @@ public class D330_Files {
 
    public static void main(String[] args) throws FileNotFoundException {
       /* relevante Systemeigenschaften */
-      String fileSeparator = System.getProperty("file.separator");
-      System.out.println("fileSeparator: " + fileSeparator);
-      String userWorkDirectory = System.getProperty("user.dir");
-      System.out.println("userWorkDirectory: " + userWorkDirectory);
-      String userHomeDirectory = System.getProperty("user.home");
-      System.out.println("userHomeDirectory: " + userHomeDirectory);
+      System.out.println("File Separator: " + System.getProperty("file.separator"));
+      System.out.println("User Work Directory: " + System.getProperty("user.dir"));
+      System.out.println("User Home Directory: " + System.getProperty("user.home"));
 
       /* Absolute Pfadangaben */
-      // File file = new File(userWorkDirectory + "\\src\\main\\resources\\persons.txt");
+      // File file = new File(System.getProperty("user.dir") +
+      // "\\src\\main\\resources\\persons.txt");
 
       /* Relative Pfadangaben */
       File file = new File("src/main/resources/persons.txt"); // relative Pfadangabe
@@ -44,10 +42,11 @@ public class D330_Files {
          Person p = new Person(name, age, gender);
          persons.add(p);
       }
-      for (int i = 0; i < persons.size(); i++) {
-         System.out.println(persons.get(i).toString());
-      }
       scanner.close();
+
+      for (Person p : persons) {
+         System.out.println(p);
+      }
    }
 
 }

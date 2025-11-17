@@ -1,9 +1,10 @@
 package main;
 
-import model.Printer;
+import util.Calculator;
+import util.Printer;
 
 /**
- * Statische Methoden
+ * Static Methods
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -17,6 +18,11 @@ public class D020_StaticMethods {
       Printer.printText("Winter");
       Printer.printText("is");
       Printer.printText("coming");
+
+      int result1 = Calculator.add(5, 3);
+      int result2 = Calculator.multiply(5, 3);
+      System.out.println(result1);
+      System.out.println(result2);
    }
 
 }

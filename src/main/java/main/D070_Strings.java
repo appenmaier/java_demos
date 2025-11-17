@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Zeichenketten
+ * Strings
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -10,25 +10,36 @@ package main;
 public class D070_Strings {
 
    public static void main(String[] args) {
-
+      /* Wichtige Methoden */
       String text = "Hello World";
 
-      char char1 = text.charAt(0);
-      char char5 = text.charAt(4);
       int length = text.length();
+      char characterAtIndex7 = text.charAt(7);
+      char firstCharacter = text.charAt(0);
+      char lastCharacter = text.charAt(length - 1);
 
-      System.out.println("char1: " + char1);
-      System.out.println("char5: " + char5);
       System.out.println("length: " + length);
+      System.out.println("characterAtIndex7: " + characterAtIndex7);
+      System.out.println("firstCharacter: " + firstCharacter);
+      System.out.println("lastCharacter: " + lastCharacter);
+
+      /* Zeichenketten-Konkatenation */
+      String columns = "id";
+      String table = "flight";
+      String condition = "city = 'Ravensburg'";
+      String sqlQuery = "SELECT " + columns + "\nFROM " + table + "\nWHERE " + condition + ";";
+      System.out.println(sqlQuery);
+
+      /* Zeichenketten-Templates */
+      // String sqlQuery2 = STR."""
+      // SELECT \{ columns }
+      // FROM \{ table }
+      // WHERE \{ condition };
+      // """;
 
       /* Escape-Sequenzen */
-      String text2 = "\"Hello World\" heisst auf Deutsch \"Hallo Welt\"";
-      System.out.println("text2: " + text2);
-      System.out.println("Tabulator: \t" + text);
-      System.out.println("Zeilenumbruch: \n" + text);
-      System.out.println("Anfuehrungszeichen: \"" + text + "\"");
-      System.out.println("Umgedrehter Schraegstrich: \\");
-
+      System.out.println("Hallo \"Peter\""); // Anführungszeichen
+      System.out.println("C:\\Temp"); // Schrägstrich Links
    }
 
 }

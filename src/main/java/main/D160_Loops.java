@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Schleifen
+ * Loops
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -10,41 +10,28 @@ package main;
 public class D160_Loops {
 
    public static void main(String[] args) {
-
-      /* while-Schleife (kopfgesteuerte Schleife) */
-      int i = 1;
-
-      while (i <= 10) {
-         System.out.println(i);
-         i++;
+      // while-Schleife (kopfgesteuerte Schleife)
+      int x = 1;
+      while (x <= 10) {
+         System.out.println(x);
+         x++;
       }
 
       System.out.println();
 
-      /* do/while-Schleife (fussgesteuerte Schleife) */
-      int k = 1;
-
+      // do/while-Schleife (fußgesteuerte Schleife)
+      int a = 1;
       do {
-         System.out.println(k);
-         k++;
-      } while (k <= 10);
+         System.out.println(a);
+         a++;
+      } while (a <= 10);
 
       System.out.println();
 
-      /* for-Schleife (Zaehlschleife) */
-      for (int m = 1; m <= 10; m++) {
-         System.out.println(m);
+      // for-Schleife (Zählschleife)
+      for (int i = 1; i <= 10; i++) {
+         System.out.println(i);
       }
-
-      String text = "Hello World, how are u doing?";
-      for (int m = 0; m < text.length(); m++) {
-         System.out.println(m + ": " + text.charAt(m));
-      }
-
-      System.out.println("i: " + i);
-      System.out.println("k: " + k);
-      // System.out.println("m: " + m);
-
    }
 
 }

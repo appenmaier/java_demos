@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Bitweise Operatoren
+ * Bitwise Operators
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -10,7 +10,6 @@ package main;
 public class D090_BitwiseOperators {
 
    public static void main(String[] args) {
-
       byte b1 = 43;
       byte b2 = 12;
       byte b3;
@@ -26,7 +25,6 @@ public class D090_BitwiseOperators {
 
       b3 = (byte) ~b1;
       System.out.println("b3:" + b3);
-
    }
 
 }

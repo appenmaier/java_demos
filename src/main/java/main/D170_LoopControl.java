@@ -3,7 +3,7 @@ package main;
 import java.util.Scanner;
 
 /**
- * Schleifensteuerung mit break und continue
+ * Loop Control
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -13,28 +13,31 @@ public class D170_LoopControl {
 
    @SuppressWarnings("resource")
    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
 
-      Scanner sc = new Scanner(System.in);
+      /* continue */
+      System.out.print("Text eingeben: ");
+      String text = scanner.nextLine();
+      System.out.println("Zeichen eingeben: ");
+      char token = scanner.next().charAt(0);
 
-      int i = 0;
-      while (true) {
-         i++;
-         System.out.println("Schleifendurchlauf: " + i);
-         System.out.print(
-               "Was moechtest Du tun (1: Schleifendurchlauf fortsetzen, 2: Schleifendurchlauf beenden, 3: Schleife beenden): ");
-         int answer = sc.nextInt();
-
-         if (answer == 2) {
+      for (int i = 0; i < text.length(); i++) {
+         if (text.charAt(i) == token) {
             continue;
          }
+         System.out.print(text.charAt(i));
+      }
+      System.out.println();
 
-         if (answer == 3) {
+      /* break */
+      while (true) {
+         System.out.print("Schleife beenden (true)?: ");
+         if (scanner.nextBoolean()) { // if (scanner.nextBoolean() == true) {
             break;
          }
-
-         System.out.println("Programmende");
+         long now = System.currentTimeMillis();
+         System.out.println(now);
       }
-
    }
 
 }

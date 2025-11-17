@@ -3,34 +3,31 @@ package main;
 import java.util.Scanner;
 
 /**
- * Mehrfachverzweigungen
+ * Cases
  * 
  * @author Daniel Appenmaier
  * @version 1.0
  *
  */
-public class D150_SwitchCases {
+public class D150_Cases {
 
    @SuppressWarnings("resource")
    public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in);
 
-      Scanner sc = new Scanner(System.in);
-
-      System.out.print("Gibt bitte \"R/r\", \"G/g\" oder \"B/b\": ");
-      char color = sc.next().charAt(0);
+      System.out.print("\"R/r\", \"G/g\" oder \"B/b\" eingeben: ");
+      char color = scanner.next().charAt(0);
 
       String colorText;
-
       if (color == 'R' || color == 'r') {
          colorText = "rot";
       } else if (color == 'G' || color == 'g') {
-         colorText = "gruen";
+         colorText = "grün";
       } else if (color == 'B' || color == 'b') {
          colorText = "blau";
       } else {
          colorText = "";
       }
-
       System.out.println(colorText);
 
       switch (color) {
@@ -40,7 +37,7 @@ public class D150_SwitchCases {
             break;
          case 'G':
          case 'g':
-            colorText = "gruen";
+            colorText = "grün";
             break;
          case 'B':
          case 'b':
@@ -50,18 +47,15 @@ public class D150_SwitchCases {
             colorText = "";
             break;
       }
-
       System.out.println(colorText);
 
       colorText = switch (color) {
          case 'R', 'r' -> "rot";
-         case 'G', 'g' -> "gruen";
+         case 'G', 'g' -> "grün";
          case 'B', 'b' -> "blau";
          default       -> "";
       };
-
       System.out.println(colorText);
-
    }
 
 }

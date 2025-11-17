@@ -11,12 +11,12 @@ public class Toaster implements WiredDevice {
 
    @Override
    public void plugIn() {
-      System.out.println("Ich, der Toaster, bin eingesteckt");
+      System.out.println("Ich, der Toaster, bin jetzt eingesteckt");
    }
 
    @Override
    public void pullThePlug() {
-      System.out.println("Ich, der Toaster, bin ausgesteckt");
+      System.out.println("Ich, der Toaster, bin jetzt ausgesteckt");
    }
 
 }

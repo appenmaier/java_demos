@@ -7,7 +7,7 @@ import model.AlreadyPluggedInException;
 import model.FlashLight;
 import model.Light;
 import model.PlugType;
-import model.TableLamp;
+import model.TableLight;
 
 /**
  * Ausnahmen (Exceptions)
@@ -45,14 +45,14 @@ public class D400_Exceptions {
 
       /* ClassCastException */
       Light light;
-      light = new TableLamp(PlugType.TYPE_F);
+      light = new TableLight(PlugType.TYPE_F);
       if (light instanceof FlashLight) {
          FlashLight flashLight = (FlashLight) light;
          flashLight.recharge();
       }
 
       /* AlreadyPluggedInException */
-      TableLamp tableLamp = new TableLamp(PlugType.TYPE_F);
+      TableLight tableLamp = new TableLight(PlugType.TYPE_F);
       try {
          tableLamp.plugIn();
          tableLamp.plugIn();

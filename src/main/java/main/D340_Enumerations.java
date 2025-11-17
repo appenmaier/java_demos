@@ -1,13 +1,9 @@
 package main;
 
-import java.awt.Color;
-
-import model.LightBulb;
 import model.PlugType;
-import model.TableLamp;
 
 /**
- * Aufzaehlungen (Enumerations)
+ * Enumerations
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -16,25 +12,22 @@ import model.TableLamp;
 public class D340_Enumerations {
 
    public static void main(String[] args) {
+      PlugType typeF = PlugType.TYPE_F;
+      PlugType typeB = PlugType.TYPE_B;
+      PlugType typeF2 = PlugType.TYPE_F;
 
-      LightBulb redLightBulb = new LightBulb(Color.RED);
-      TableLamp tableLamp = new TableLamp(PlugType.TYPE_F);
-      tableLamp.changeLightBulb(redLightBulb);
-      System.out.println(tableLamp.toString());
-      System.out.println(tableLamp.plugType().region());
+      String text = "TYPE_I";
+      PlugType typeI = PlugType.valueOf(text);
 
-      System.out.println(PlugType.TYPE_I.norm());
+      System.out.println(typeF.description());
+      System.out.println(typeB.description());
+      System.out.println(typeF2.description());
+      System.out.println(typeI.description());
+      System.out.println();
 
-      PlugType[] plugTypeEnums = PlugType.values();
-      for (int i = 0; i < plugTypeEnums.length; i++) {
-         PlugType plugTypeEnum = plugTypeEnums[i];
-         System.out.println(plugTypeEnum.description());
+      for (PlugType p : PlugType.values()) {
+         System.out.println(p);
       }
-
-      String plugType = "TYPE_F";
-      PlugType plugTypeEnum = PlugType.valueOf(plugType);
-      System.out.println(plugTypeEnum.norm());
-
    }
 
 }

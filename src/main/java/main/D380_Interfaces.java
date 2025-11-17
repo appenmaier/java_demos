@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import model.LightBulb;
 import model.PlugType;
-import model.TableLamp;
+import model.TableLight;
 import model.Toaster;
 import model.WiredDevice;
 
 /**
- * Schnittstellen (Interfaces)
+ * Interfaces
  * 
  * @author Daniel Appenmaier
  * @version 2.0
@@ -18,23 +18,22 @@ import model.WiredDevice;
 public class D380_Interfaces {
 
    public static void main(String[] args) {
-
       ArrayList<WiredDevice> wiredDevices = new ArrayList<>();
 
-      // wiredDevices.add(new WiredDevice());
-      wiredDevices.add(new Toaster()); // Upcast
-      wiredDevices.add(new TableLamp(PlugType.TYPE_F)); // Upcast
+      // Wired wiredDevice = new WiredDevice();
 
-      for (WiredDevice wiredDevice : wiredDevices) {
-         /* version 1.0: wiredDevice.plugIn(); // (Dynamische) Polymorphie */
-         if (wiredDevice instanceof TableLamp) {
-            TableLamp t = (TableLamp) wiredDevice; // Downcast
+      WiredDevice wiredDevice = new Toaster(); // expliziter Upcast
+      wiredDevices.add(wiredDevice);
+      wiredDevices.add(new TableLight(PlugType.TYPE_F)); // impliziter Upcast
+
+      for (WiredDevice w : wiredDevices) {
+         // w.plugIn(); // (Dynamische) Polymorphie
+         if (w instanceof TableLight t) { // Downcast
             t.changeLightBulb(new LightBulb());
             t.switchOn();
          }
-         System.out.println(wiredDevice); // (Dynamische) Polymorphie
+         System.out.println(w); // (Dynamische) Polymorphie
       }
-
    }
 
 }

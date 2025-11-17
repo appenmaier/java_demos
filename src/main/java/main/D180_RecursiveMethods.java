@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Rekursive Methoden
+ * Recursive Methods
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -26,10 +26,8 @@ public class D180_RecursiveMethods {
    }
 
    public static void main(String[] args) {
-
       System.out.println(calculateFactorialIterative(9));
       System.out.println(calculateFactorialRecursive(9));
-
    }
 
 }

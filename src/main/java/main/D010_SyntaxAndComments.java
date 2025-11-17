@@ -1,7 +1,7 @@
 package main;
 
 /**
- * Grundlegende Syntax und Kommentare
+ * Syntax and Comments
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -10,10 +10,11 @@ package main;
 public class D010_SyntaxAndComments {
 
    public static void main(String[] args) {
-      String text = "Hello World"; // Deklaration und Initialisierung
+      String name; // Deklaration
+      name = "Daniel"; // Initialisierung
 
       /* Ausgabe */
-      System.out.print(text);
+      System.out.print("Hello " + name);
    }
 
 }

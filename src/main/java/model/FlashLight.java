@@ -1,10 +1,12 @@
 package model;
 
+import java.util.Objects;
+
 /**
- * Taschenlampe
+ * Flash Light
  *
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 3.0
  *
  */
 public final class FlashLight extends Light {
@@ -15,8 +17,10 @@ public final class FlashLight extends Light {
       energyLevel = 1.0;
    }
 
-   public double getEnergyLevel() {
-      return energyLevel;
+   @Override
+   public void switchOn() {
+      isOn = true;
+      energyLevel -= 0.1;
    }
 
    public void recharge() {
@@ -24,19 +28,36 @@ public final class FlashLight extends Light {
    }
 
    @Override
-   public void switchOn() {
-      isOn = true;
-      energyLevel -= 0.1;
-      if (energyLevel > 0) {
-         isShining = true;
-      }
+   public boolean isShining() {
+      return energyLevel >= 0.1;
    }
 
    @Override
    public String toString() {
-      return "FlashLight [energyLevel=" + energyLevel + ", isOn=" + isOn + ", isShining="
-            + isShining + "]";
+      return "FlashLight [isOn=" + isOn + ", energyLevel=" + energyLevel + "]";
+   }
+
+   @Override
+   public int hashCode() {
+      final int prime = 31;
+      int result = super.hashCode();
+      result = prime * result + Objects.hash(energyLevel);
+      return result;
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
+      }
+      if (!super.equals(obj)) {
+         return false;
+      }
+      if (getClass() != obj.getClass()) {
+         return false;
+      }
+      FlashLight other = (FlashLight) obj;
+      return Double.doubleToLongBits(energyLevel) == Double.doubleToLongBits(other.energyLevel);
    }
 
 }
-/* version 1.0: public class FlashLight extends Light {...} */

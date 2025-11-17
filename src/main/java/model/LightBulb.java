@@ -1,53 +1,60 @@
 package model;
 
 import java.awt.Color;
+import java.util.Objects;
 
 /**
- * Gluehbirne
+ * Light Bulb
  * 
  * @author Daniel Appenmaier
- * @version 4.0
+ * @version 6.0
  *
  */
 public class LightBulb {
 
    private final Color color;
-   /* version 3.0: private String color */
-   /* version 2.0: private String color */
-   /* version 1.0: public String color; */
 
    public LightBulb() {
       this.color = Color.WHITE;
    }
-   /* version 3.0: public LightBulb() { this.color = "weiss"; } */
-   /* version 2.0: - */
 
    public LightBulb(Color color) {
       this.color = color;
    }
-   /* version 3.0: public LightBulb(String color) { this.color = color; } */
-   /* version 2.0: - */
-
-   // public void setColor(String color) {
-   // this.color = color;
-   // }
-   /* version 2.0: public void setColor(String color) { this.color = color; } */
-   /* version 1.0: - */
 
    public Color color() {
       return color;
    }
-   /* version 3.0: public String color() { return color; } */
-   /* version 1.0: - */
 
-   public boolean equals(LightBulb lightBulb) {
-      boolean isEqual = this.color.equals(lightBulb.color);
-      return isEqual;
+   public boolean equals(LightBulb other) {
+      Color color1 = color;
+      Color color2 = other.color;
+      return color1.equals(color2);
    }
 
    @Override
    public String toString() {
       return "LightBulb [color=" + color.toString() + "]";
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(color);
+   }
+
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
+      }
+      if (obj == null) {
+         return false;
+      }
+      if (getClass() != obj.getClass()) {
+         return false;
+      }
+      LightBulb other = (LightBulb) obj;
+      return Objects.equals(color, other.color);
    }
 
 }
