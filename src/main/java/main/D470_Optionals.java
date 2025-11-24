@@ -1,6 +1,7 @@
 package main;
 
 import java.util.Optional;
+import java.util.Random;
 
 /**
  * Optionals
@@ -11,43 +12,48 @@ import java.util.Optional;
  */
 public class D470_Optionals {
 
-   private static Optional<String> getOptionalText(boolean giveBack) {
-      if (giveBack) {
-         return Optional.of("Hallo Welt");
-      }
-      return Optional.empty();
-   }
-
-   private static String getText(boolean giveBack) {
-      if (giveBack) {
-         return "Hallo Welt";
-      }
-      return null;
-   }
+   private static boolean giveBack;
 
    public static void main(String[] args) {
+      Random random = new Random();
+      giveBack = random.nextBoolean();
 
       /* Ohne Optionals */
-      String text = getText(false);
-      try {
-         System.out.println(text.toUpperCase());
-      } catch (NullPointerException e) {
-
-      }
-
+      String text = getText();
       if (text != null) {
          System.out.println(text.toUpperCase());
+      } else {
+         System.out.println("Kein Text");
       }
 
-      /* Mit Optionals */
-      Optional<String> optionalText = getOptionalText(false);
-      if (optionalText.isPresent()) {
-         System.out.println(optionalText.get().toUpperCase());
+      /* Mit Optionals (imperative Lösung) */
+      Optional<String> optionalText1 = getOptionalText();
+      if (optionalText1.isPresent()) {
+         System.out.println(optionalText1.get().toUpperCase());
+      } else {
+         System.out.println("Kein Text");
       }
 
-      optionalText.ifPresent(s -> System.out.println(s.toUpperCase()));
-      System.out.println(optionalText.orElse("Alternativer Text"));
+      /* Mit Optionals (deklarative Lösung) */
+      Optional<String> optionalText2 = getOptionalText();
+      optionalText2.ifPresentOrElse(t -> System.out.println(t.toUpperCase()),
+            () -> System.out.println("Kein Text"));
+   }
 
+   private static String getText() {
+      if (giveBack) {
+         return "Text";
+      } else {
+         return null;
+      }
+   }
+
+   private static Optional<String> getOptionalText() {
+      if (giveBack) {
+         return Optional.of("Text");
+      } else {
+         return Optional.empty();
+      }
    }
 
 }

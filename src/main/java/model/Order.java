@@ -1,29 +1,34 @@
 package model;
 
-import java.util.ArrayList;
+import java.util.List;
+
+import lombok.Data;
 
 /**
- * Bestellung
+ * Order
  * 
  * @author Daniel Appenmaier
  * @version 1.0
  *
  */
+@Data
 public class Order {
 
-   /**
-    * Bestell-Position
-    *
-    * @author Daniel Appenmaier
-    * @version 1.0
-    *
-    */
-   public class OrderItem {
+   private List<Item> items;
+   private Orderer orderer;
 
-      public String description;
+   @Data
+   public static class Orderer {
+
+      private final String name;
 
    }
 
-   public ArrayList<OrderItem> orderItems;
+   @Data
+   public class Item {
+
+      private final String description;
+
+   }
 
 }

@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Kugel
+ * Sphere
  *
  * @author Daniel Appenmaier
  * @version 1.0

@@ -1,0 +1,14 @@
+package model;
+
+/**
+ * Genre
+ *
+ * @author Daniel Appenmaier
+ * @version 1.0
+ *
+ */
+public enum Genre {
+
+   ACTION, ADVENTURE, ANIMATION, BIOGRAPHY, COMEDY, CRIME, DOCUMENTARY, DRAMA, FAMILY, FANTASY, FILM_NOIR, HISTORY, HORROR, MUSIC, MUSICAL, MYSTERY, NEWS, ROMANCE, SCIENCE_FICTION, SPORT, THRILLER, WAR, WESTERN;
+
+}

@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Binaersuche
+ * Binary Search
  *
  * @author Daniel Appenmaier
  * @version 1.0

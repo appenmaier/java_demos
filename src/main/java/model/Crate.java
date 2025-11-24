@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * Kasten
+ * Crate
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -13,9 +13,9 @@ import java.util.Optional;
  */
 public record Crate(List<Body> bodies) {
 
-   public void addBody(Body body) throws NullPointerException {
-      if (body == null) {
-         throw new NullPointerException();
+   public void addBody(Body body) throws DuplicateEntryException {
+      if (bodies.contains(body)) {
+         throw new DuplicateEntryException();
       }
       bodies.add(body);
    }

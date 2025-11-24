@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Geometrischer Koerper
+ * Body
  *
  * @author Daniel Appenmaier
  * @version 1.0

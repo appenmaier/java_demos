@@ -6,7 +6,7 @@ import java.util.Objects;
  * Table Light
  *
  * @author Daniel Appenmaier
- * @version 10.0
+ * @version 9.0
  *
  */
 public final class TableLight extends Light implements WiredDevice {
@@ -23,11 +23,7 @@ public final class TableLight extends Light implements WiredDevice {
    }
 
    @Override
-   public void plugIn() throws AlreadyPluggedInException {
-      if (isConnected) {
-         throw new AlreadyPluggedInException();
-      }
-
+   public void plugIn() {
       isConnected = true;
    }
 

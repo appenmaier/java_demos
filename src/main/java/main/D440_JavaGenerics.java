@@ -3,7 +3,7 @@ package main;
 import model.Box;
 
 /**
- * Generische Programmierung
+ * Java Generics
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -12,7 +12,6 @@ import model.Box;
 public class D440_JavaGenerics {
 
    public static void main(String[] args) {
-
       Box<String> stringBox = new Box<>();
       stringBox.setContent("Hello World");
       String text = stringBox.getContent();
@@ -22,7 +21,6 @@ public class D440_JavaGenerics {
       integerBox.setContent(42);
       int number = integerBox.getContent();
       System.out.println(number);
-
    }
 
 }

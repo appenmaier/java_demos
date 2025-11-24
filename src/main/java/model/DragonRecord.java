@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Drache
+ * Dragon
  *
  * @author Daniel Appenmaier
  * @version 1.0

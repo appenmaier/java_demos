@@ -9,7 +9,7 @@ import lombok.Setter;
 import lombok.ToString;
 
 /**
- * Drache
+ * Dragon
  *
  * @author Daniel Appenmaier
  * @version 1.0

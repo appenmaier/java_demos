@@ -3,14 +3,11 @@ package main;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import model.AlreadyPluggedInException;
-import model.FlashLight;
-import model.Light;
-import model.PlugType;
-import model.TableLight;
+import model.InvalidParameterValueException;
+import model.Movie;
 
 /**
- * Ausnahmen (Exceptions)
+ * Exceptions
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -20,15 +17,14 @@ public class D400_Exceptions {
 
    @SuppressWarnings("resource")
    public static void main(String[] args) {
-
       /* ArrayIndexOutOfBoundsException und NullPointerException */
-      String[] names = {"Hans", "Peter", null};
       try {
+         String[] names = {"Hans", "Peter", null};
          System.out.println(names[3]);
          String name = names[2];
          System.out.println(name.toUpperCase());
       } catch (ArrayIndexOutOfBoundsException e) {
-         System.err.println(e.getMessage());
+         e.printStackTrace();
       } catch (NullPointerException e) {
          e.printStackTrace();
       }
@@ -36,33 +32,46 @@ public class D400_Exceptions {
       /* InputMismatchException */
       try {
          Scanner sc = new Scanner(System.in);
-         System.out.print("Bitte gib eine ganze Zahl ein: ");
+         System.out.print("Eine ganze Zahl eingeben: ");
          int number = sc.nextInt();
          System.out.println(number);
       } catch (InputMismatchException e) {
-         System.out.println("Eine InputMismatchException ist aufgetreten");
+         e.printStackTrace();
       }
 
       /* ClassCastException */
-      Light light;
-      light = new TableLight(PlugType.TYPE_F);
-      if (light instanceof FlashLight) {
-         FlashLight flashLight = (FlashLight) light;
-         flashLight.recharge();
-      }
-
-      /* AlreadyPluggedInException */
-      TableLight tableLamp = new TableLight(PlugType.TYPE_F);
       try {
-         tableLamp.plugIn();
-         tableLamp.plugIn();
-         tableLamp.plugIn();
-      } catch (AlreadyPluggedInException e) {
-         System.err.println(e.getMessage());
+         Number n;
+         Integer i = 42;
+         n = i;
+         Double d = (Double) n;
+         System.out.println(d);
+      } catch (ClassCastException e) {
+         e.printStackTrace();
       }
 
-      System.out.println("Programmende");
-
+      /* InvalidParameterValueException */
+      try {
+         Movie movie = new Movie(null, null, null, 0);
+         System.out.println(movie);
+      } catch (InvalidParameterValueException e) {
+         e.printStackTrace();
+      }
+      try {
+         Movie movie = new Movie(null, null, null, 1);
+         movie.setRating(0);
+         System.out.println(movie);
+      } catch (InvalidParameterValueException e) {
+         e.printStackTrace();
+      }
+      try {
+         Movie movie = new Movie(null, null, null, 1);
+         movie.setRating(1);
+         movie.setVotes(-1);
+         System.out.println(movie);
+      } catch (InvalidParameterValueException e) {
+         e.printStackTrace();
+      }
    }
 
 }

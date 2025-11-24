@@ -1,18 +1,17 @@
 package model;
 
 /**
- * Kiste
+ * Box
  *
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 1.0
  *
  */
 public class Box<T> {
 
    private T content;
 
-   public Box() {
-   }
+   public Box() {}
 
    public T getContent() {
       return content;

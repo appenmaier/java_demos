@@ -23,13 +23,10 @@ public class CrateTest {
 
    @Mock
    private Sphere sphere1;
-   /* version 1.0: private Sphere sphere1; */
    @Mock
    private Sphere sphere2;
-   /* version 1.0: private Sphere sphere2; */
    @Mock
    private Body body;
-   /* version 1.0: private Body body; */
    private Crate crate;
 
    @BeforeEach
@@ -37,42 +34,51 @@ public class CrateTest {
       MockitoAnnotations.openMocks(this);
       crate = new Crate(new ArrayList<>());
    }
-   /*
-    * version 1.0: @BeforeEach void setUp() { sphere1 = new Sphere(2.0); sphere2 = new Sphere(1.0);
-    * body = () -> 1.5; crate = new Crate(new ArrayList<>()); }
-    */
 
    @Test
-   void testAddBody() {
+   void addBody_Add3Bodies_ListWith3Bodies() throws DuplicateEntryException {
       crate.addBody(sphere1);
       crate.addBody(sphere2);
       crate.addBody(body);
       assertEquals(sphere1, crate.bodies().get(0));
       assertEquals(sphere2, crate.bodies().get(1));
       assertEquals(body, crate.bodies().get(2));
-      assertThrows(NullPointerException.class, () -> crate.addBody(null));
    }
 
    @Test
-   void testGetBodyWithHighestVolume() {
-      when(sphere1.getVolume()).thenReturn(33.51);
-      when(sphere2.getVolume()).thenReturn(4.189);
-      when(body.getVolume()).thenReturn(14.137);
+   void addBody_AddOneBodyTwice_DuplicateException() throws DuplicateEntryException {
+      crate.addBody(body);
+      assertThrows(DuplicateEntryException.class, () -> crate.addBody(body));
+   }
+
+   @Test
+   void getBodyWithHighestVolume_EmptyList_EmptyOptional() {
       assertEquals(Optional.empty(), crate.getBodyWithHighestVolume());
+   }
+
+   @Test
+   void getBodyWithHighestVolume_ListWith3Bodies_BodyWithHighestVolume() {
+      when(sphere1.getVolume()).thenReturn(3.0);
+      when(sphere2.getVolume()).thenReturn(1.0);
+      when(body.getVolume()).thenReturn(2.0);
       crate.bodies().add(sphere1);
       crate.bodies().add(sphere2);
       crate.bodies().add(body);
       assertEquals(Optional.of(sphere1), crate.getBodyWithHighestVolume());
    }
-   /*
-    * version 1.0: @Test void testGetBodyWithHighestVolume() { assertEquals(Optional.empty(),
-    * crate.getBodyWithHighestVolume()); crate.bodies().add(sphere1); crate.bodies().add(sphere2);
-    * crate.bodies().add(body); assertEquals(Optional.of(sphere1),
-    * crate.getBodyWithHighestVolume()); }
-    */
 
    @Test
-   void testGetAllSpheres() {
+   void getAllSpheres_AddNothing_EmptyList() {
+      assertEquals(0, crate.getAllSpheres().size());
+   }
+
+   @Test
+   void getAllSpheres_Add1Body_EmptyList() {
+      assertEquals(0, crate.getAllSpheres().size());
+   }
+
+   @Test
+   void getAllSpheres_Add2SpheresAnd1Body_ListWith2Spheres() {
       crate.bodies().add(sphere1);
       crate.bodies().add(sphere2);
       crate.bodies().add(body);

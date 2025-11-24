@@ -3,7 +3,7 @@ package model;
 import java.util.Objects;
 
 /**
- * Drache
+ * Dragon
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -60,7 +60,7 @@ public class DragonClass {
 
    @Override
    public String toString() {
-      return "DragonNormalClass [name=" + name + ", type=" + type + ", age=" + age + "]";
+      return "DragonClass [name=" + name + ", type=" + type + ", age=" + age + "]";
    }
 
 }

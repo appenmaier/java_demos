@@ -1,161 +1,109 @@
 package model;
 
-import java.util.Comparator;
 import java.util.List;
+import java.util.Objects;
 
 /**
- * Film
+ * Movie
  *
  * @author Daniel Appenmaier
- * @version 4.0
+ * @version 2.0
  *
  */
-public record Movie(String title, List<Genre> genres, String year, int runtimeInMinutes,
-      double rating, int votes) implements Comparable<Movie> {
+public class Movie implements Comparable<Movie> {
+
+   private final String title;
+   private final List<Genre> genres;
+   private final String year;
+   private final int runtimeInMinutes;
+   private double rating;
+   private int votes;
+
+   public Movie(String title, List<Genre> genres, String year, int runtimeInMinutes)
+         throws InvalidParameterValueException {
+      if (runtimeInMinutes <= 0) {
+         throw new InvalidParameterValueException("runtimeInMinutes", runtimeInMinutes);
+      }
+
+      this.title = title;
+      this.genres = genres;
+      this.year = year;
+      this.runtimeInMinutes = runtimeInMinutes;
+   }
+
+   public void setRating(double rating) throws InvalidParameterValueException {
+      if (rating <= 0 || rating > 10) {
+         throw new InvalidParameterValueException("rating", rating);
+      }
+
+      this.rating = rating;
+   }
+
+   public void setVotes(int votes) throws InvalidParameterValueException {
+      if (votes < 0) {
+         throw new InvalidParameterValueException("votes", votes);
+      }
+
+      this.votes = votes;
+   }
+
+   public String title() {
+      return title;
+   }
+
+   public List<Genre> genres() {
+      return genres;
+   }
+
+   public String year() {
+      return year;
+   }
+
+   public int runtimeInMinutes() {
+      return runtimeInMinutes;
+   }
+
+   public double getRating() {
+      return rating;
+   }
+
+   public int getVotes() {
+      return votes;
+   }
 
    @Override
-   public int compareTo(Movie other) {
-      if (other.year.compareTo(year) == 0) {
-         return title.compareTo(other.title);
-      } else {
-         return other.year.compareTo(year);
-      }
+   public String toString() {
+      return "Movie [title=" + title + ", genres=" + genres + ", year=" + year
+            + ", runtimeInMinutes=" + runtimeInMinutes + ", rating=" + rating + ", votes=" + votes
+            + "]";
    }
-   /* version 2.0: - */
 
-   /**
-    * MovieByRatingDescendingComparator
-    *
-    * @author Daniel Appenmaier
-    * @version 1.0
-    *
-    */
-   public static class MovieByRatingDescendingComparator implements Comparator<Movie> {
-
-      @Override
-      public int compare(Movie movie1, Movie movie2) {
-         return Double.valueOf(movie2.rating()).compareTo(movie1.rating());
-      }
-
+   @Override
+   public int hashCode() {
+      return Objects.hash(genres, rating, runtimeInMinutes, title, votes, year);
    }
-   /* version 3.0: - */
 
-   /**
-    * MovieByYearDescendingAndTitleAscendingComparator
-    *
-    * @author Daniel Appenmaier
-    * @version 1.0
-    *
-    */
-   public static class MovieByYearDescendingAndTitleAscendingComparator
-         implements Comparator<Movie> {
-
-      @Override
-      public int compare(Movie movie1, Movie movie2) {
-         if (movie2.year() == movie1.year()) {
-            return movie1.title().compareTo(movie2.title());
-         }
-         return movie2.year().compareTo(movie1.year());
+   @Override
+   public boolean equals(Object obj) {
+      if (this == obj) {
+         return true;
       }
-
+      if (obj == null) {
+         return false;
+      }
+      if (getClass() != obj.getClass()) {
+         return false;
+      }
+      Movie other = (Movie) obj;
+      return Objects.equals(genres, other.genres)
+            && Double.doubleToLongBits(rating) == Double.doubleToLongBits(other.rating)
+            && runtimeInMinutes == other.runtimeInMinutes && Objects.equals(title, other.title)
+            && votes == other.votes && Objects.equals(year, other.year);
    }
-   /* version 3.0: - */
 
-   /**
-    * Genre
-    *
-    * @author Daniel Appenmaier
-    * @version 1.0
-    *
-    */
-   public enum Genre {
-
-      ACTION("Action"), ADVENTURE("Adventure"), ANIMATION("Animation"), BIOGRAPHY(
-            "Biography"), COMEDY("Comedy"), CRIME("Crime"), DOCUMENTARY("Documentary"), DRAMA(
-                  "Drama"), FAMILY("Family"), FANTASY("Fantasy"), FILM_NOIR("Film Noir"), HISTORY(
-                        "History"), HORROR("Horror"), MUSIC("Music"), MUSICAL("Musical"), MYSTERY(
-                              "Mystery"), NEWS("News"), ROMANCE("Romance"), SCIENCE_FICTION(
-                                    "Science Fiction"), SPORT("Sport"), THRILLER(
-                                          "Thriller"), WAR("War"), WESTERN("Western");
-
-      private String name;
-
-      Genre(String name) {
-         this.name = name;
-      }
-
-      public String getName() {
-         return name;
-      }
-
+   @Override
+   public int compareTo(Movie otherMovie) {
+      return title.compareTo(otherMovie.title);
    }
-   /* version 3.0: - */
-
-   // private final String title;
-   /* version 1.0: private final String title; */
-   // private final List<Genre> genres;
-   /* version 1.0: private final List<Genre> genres; */
-   // private final String year;
-   /* version 1.0: private final String year; */
-   // private final int runtimeInMinutes;
-   /* version 1.0: private final int runtimeInMinutes; */
-   // private final double rating;
-   /* version 1.0: private final double rating; */
-   // private final int votes;
-   /* version 1.0: private final int votes; */
-
-   // public Movie(String title, List<Genre> genres, String year, int runtimeInMinutes,
-   // double rating, int votes) {
-   // this.title = title;
-   // this.genres = genres;
-   // this.year = year;
-   // this.runtimeInMinutes = runtimeInMinutes;
-   // this.rating = rating;
-   // this.votes = votes;
-   // }
-   /*
-    * version 1.0: public Movie(String title, List<Genre> genres, String year, int runtimeInMinutes,
-    * double rating, int votes) { this.title = title; this.genres = genres; this.year = year;
-    * this.runtimeInMinutes = runtimeInMinutes; this.rating = rating; this.votes = votes; }
-    */
-
-   // public String title() {
-   // return title();
-   // }
-   /* version 1.0: public String title() { return title(); } */
-
-   // public List<Genre> genres() {
-   // return genres;
-   // }
-   /* version 1.0: public List<Genre> genres() { return genres; } */
-
-   // public String year() {
-   // return year;
-   // }
-   /* version 1.0: public String year() { return year; } */
-
-   // public int runtimeInMinutes() {
-   // return runtimeInMinutes;
-   // }
-   /* version 1.0: public int runtimeInMinutes() { return runtimeInMinutes; } */
-
-   // public double rating() {
-   // return rating;
-   // }
-   /* version 1.0: public double rating() { return rating; } */
-
-   // public int votes() {
-   // return votes;
-   // }
-   /* version 1.0: public int votes() { return votes; } */
 
 }
-/*
- * version 3.0: public record Movie(String title, List<Genre> genres, String year, int
- * runtimeInMinutes, double rating, int votes) implements Comparable<Movie> {...}
- */
-/*
- * version 2.0: public record Movie(String title, List<Genre> genres, String year, int
- * runtimeInMinutes, double rating, int votes) {...}
- */
-/* version 1.0: public class Movie {...} */

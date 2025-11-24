@@ -1,49 +1,23 @@
 package model;
 
-import java.util.Objects;
+import lombok.Data;
 
 /**
- * Studierender
+ * Student
  *
  * @author Daniel Appenmaier
  * @version 1.0
  *
  */
-public class Student {
+@Data
+public class Student implements Comparable<Student> {
 
-   private final String matriculationNumber;
-
-   public Student(String matriculationNumber) {
-      this.matriculationNumber = matriculationNumber;
-   }
+   private final String id;
+   private final String name;
 
    @Override
-   public boolean equals(Object obj) {
-      if (this == obj) {
-         return true;
-      }
-      if (obj == null) {
-         return false;
-      }
-      if (getClass() != obj.getClass()) {
-         return false;
-      }
-      Student other = (Student) obj;
-      return Objects.equals(matriculationNumber, other.matriculationNumber);
-   }
-
-   public String getMatriculationNumber() {
-      return matriculationNumber;
-   }
-
-   @Override
-   public int hashCode() {
-      return Objects.hash(matriculationNumber);
-   }
-
-   @Override
-   public String toString() {
-      return "Student [matriculationNumber=" + matriculationNumber + "]";
+   public int compareTo(Student student) {
+      return student.name.compareTo(name);
    }
 
 }
