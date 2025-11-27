@@ -6,7 +6,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 /**
- * Zeichenorientiertes Schreiben
+ * Character Based Writing
  *
  * @author Daniel Appenmaier
  * @version 1.0

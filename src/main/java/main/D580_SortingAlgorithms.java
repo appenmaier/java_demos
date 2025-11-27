@@ -10,7 +10,7 @@ import model.QuickSort;
 import model.SelectionSort;
 
 /**
- * Sortieralgorithmen
+ * Sorting Algorithms
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -19,7 +19,6 @@ import model.SelectionSort;
 public class D580_SortingAlgorithms {
 
    public static void main(String[] args) {
-
       boolean[] sortAlgorithms = {true, true, true, true, true, true};
       boolean print = false;
       int numberOfValues = 100000;
@@ -91,7 +90,6 @@ public class D580_SortingAlgorithms {
          System.out.println("Laufzeit: " + (System.currentTimeMillis() - start) + " ms");
          System.out.println();
       }
-
    }
 
 }

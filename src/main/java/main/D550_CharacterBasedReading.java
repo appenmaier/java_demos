@@ -6,7 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
- * Zeichenorientiertes Lesen
+ * Character Based Reading
  *
  * @author Daniel Appenmaier
  * @version 1.0

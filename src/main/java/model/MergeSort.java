@@ -3,7 +3,7 @@ package model;
 import java.util.Arrays;
 
 /**
- * Mergesort
+ * Merge Sort
  *
  * @author Daniel Appenmaier
  * @version 1.0

@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Videospielkonsole
+ * Video Game Console
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -9,7 +9,7 @@ package model;
  */
 public enum VideoGameConsole {
 
-   PS4("Playstation 4"), SWITCH("Nintendo Switch");
+   PS4("Playstation 4"), NSW("Nintendo Switch");
 
    private final String description;
 

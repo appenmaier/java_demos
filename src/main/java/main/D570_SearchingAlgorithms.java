@@ -8,7 +8,7 @@ import model.InterpolationSearch;
 import model.LinearSearch;
 
 /**
- * Suchalgorithmen
+ * Searching Algorithms
  *
  * @author Daniel Appenmaier
  * @version 1.0
@@ -17,7 +17,6 @@ import model.LinearSearch;
 public class D570_SearchingAlgorithms {
 
    public static void main(String[] args) {
-
       int numberOfValues = 1000;
       int[] data = new int[numberOfValues];
 
@@ -33,19 +32,18 @@ public class D570_SearchingAlgorithms {
       System.out.println();
 
       System.out.println("Linearsuche");
-      System.out.println("Index: " + LinearSearch.linearSearch(key, data) + ", Durchlauefe: "
+      System.out.println("Index: " + LinearSearch.linearSearch(key, data) + ", Durchläufe: "
             + LinearSearch.getCounter());
       System.out.println();
 
-      System.out.println("Binaersuche");
-      System.out.println("Index: " + BinarySearch.binarySearch(key, data) + ", Durchlauefe: "
+      System.out.println("Binärsuche");
+      System.out.println("Index: " + BinarySearch.binarySearch(key, data) + ", Durchläufe: "
             + BinarySearch.getCounter());
       System.out.println();
 
       System.out.println("Interpolationssuche");
       System.out.println("Index: " + InterpolationSearch.interpolationSearch(key, data)
-            + ", Durchlauefe: " + InterpolationSearch.getCounter());
-
+            + ", Durchläufe: " + InterpolationSearch.getCounter());
    }
 
 }

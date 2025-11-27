@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Linearsuche
+ * Linear Search
  *
  * @author Daniel Appenmaier
  * @version 1.0

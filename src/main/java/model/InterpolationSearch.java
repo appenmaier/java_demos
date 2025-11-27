@@ -1,7 +1,7 @@
 package model;
 
 /**
- * Interpolationssuche
+ * Interpolation Search
  *
  * @author Daniel Appenmaier
  * @version 1.0

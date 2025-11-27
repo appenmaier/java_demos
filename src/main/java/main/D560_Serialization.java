@@ -6,20 +6,18 @@ import java.io.IOException;
 import model.Log;
 
 /**
- * Schreiben und Lesen serialisierter Objekte
+ * Serialization
  *
  * @author Daniel Appenmaier
- * @version 2.0
+ * @version 1.0
  *
  */
 public class D560_Serialization {
 
    public static void main(String[] args)
          throws IOException, InterruptedException, ClassNotFoundException {
-
       Log log = new Log();
       File file = new File("resources/log.dat");
-      /* version 1.0: File file = new File("resources/log.txt"); */
 
       if (file.exists()) {
          log.load(file);
@@ -33,11 +31,6 @@ public class D560_Serialization {
       }
 
       log.printLogEntries();
-
    }
-   /*
-    * version 1.0: public static void main(String[] args) throws IOException, InterruptedException
-    * {...}
-    */
 
 }

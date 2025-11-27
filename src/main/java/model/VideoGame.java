@@ -3,18 +3,18 @@ package model;
 import java.util.Objects;
 
 /**
- * Videospiel
+ * Video Game
  *
  * @author Daniel Appenmaier
- * @version 3.0
+ * @version 2.0
  *
  */
-public class VideoGame implements Comparable<VideoGame> {
+public class VideoGame {
 
+   private final String title;
    private final VideoGameConsole console;
    private final String publishingYear;
-   private final double rating;
-   private final String title;
+   private double rating;
 
    public VideoGame(String title, VideoGameConsole console, String publishingYear, double rating) {
       this.title = title;
@@ -23,14 +23,29 @@ public class VideoGame implements Comparable<VideoGame> {
       this.rating = rating;
    }
 
-   @Override
-   public int compareTo(VideoGame other) {
-      return Double.valueOf(other.rating).compareTo(this.rating);
+   public String title() {
+      return title;
    }
-   /* version 2.0: - */
 
    public VideoGameConsole console() {
       return console;
+   }
+
+   public String publishingYear() {
+      return publishingYear;
+   }
+
+   public void setRating(double rating) {
+      this.rating = rating;
+   }
+
+   public double getRating() {
+      return rating;
+   }
+
+   @Override
+   public int hashCode() {
+      return Objects.hash(console, publishingYear, rating, title);
    }
 
    @Override
@@ -45,36 +60,15 @@ public class VideoGame implements Comparable<VideoGame> {
          return false;
       }
       VideoGame other = (VideoGame) obj;
-      return Objects.equals(publishingYear, other.publishingYear)
+      return console == other.console && Objects.equals(publishingYear, other.publishingYear)
             && Double.doubleToLongBits(rating) == Double.doubleToLongBits(other.rating)
-            && Objects.equals(title, other.title) && console == other.console;
-   }
-   /* version 1.0: - */
-
-   @Override
-   public int hashCode() {
-      return Objects.hash(publishingYear, rating, title, console);
-   }
-   /* version 1.0: - */
-
-   public String publishingYear() {
-      return publishingYear;
-   }
-
-   public double rating() {
-      return rating;
-   }
-
-   public String title() {
-      return title;
+            && Objects.equals(title, other.title);
    }
 
    @Override
    public String toString() {
-      return "VideoGame [publishingYear=" + publishingYear + ", rating=" + rating + ", title="
-            + title + ", console=" + console + "]";
+      return "VideoGame [title=" + title + ", console=" + console + ", publishingYear="
+            + publishingYear + ", rating=" + rating + "]";
    }
-   /* version 1.0: - */
 
 }
-/* version 2.0: public class VideoGame {...} */

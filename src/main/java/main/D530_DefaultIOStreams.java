@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 
 /**
- * Standard-Ein- und Ausgabestroeme
+ * Default IO Streams
  * 
  * @author Daniel Appenmaier
  * @version 1.0
@@ -13,7 +13,6 @@ import java.util.Arrays;
 public class D530_DefaultIOStreams {
 
    public static void main(String[] args) {
-
       /* Der Standard-Eingabestrom System.in */
       System.out.print("Eingabe: ");
       try {
@@ -30,7 +29,6 @@ public class D530_DefaultIOStreams {
 
       /* Der Standard-Ausgabestrom System.out */
       System.out.println("Hello World");
-
    }
 
 }

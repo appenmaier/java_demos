@@ -3,7 +3,7 @@ package model;
 import java.util.Arrays;
 
 /**
- * Heapsort
+ * Heap Sort
  *
  * @author Daniel Appenmaier
  * @version 1.0
