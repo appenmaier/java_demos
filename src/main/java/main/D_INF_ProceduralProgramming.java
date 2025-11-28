@@ -1,13 +1,13 @@
 package main;
 
 /**
- * Prozedural Java Basics
+ * Procedural Programming
  *
  * @author Daniel Appenmaier
  * @version 1.0
  *
  */
-public class D910_ProzeduralJavaBasics {
+public class D_INF_ProceduralProgramming {
 
    public static void main(String[] args) {
       /* Primitive Datentypen */

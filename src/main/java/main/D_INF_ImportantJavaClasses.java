@@ -14,7 +14,7 @@ import java.util.Scanner;
  * @version 1.0
  *
  */
-public class D920_ImportantJavaClasses {
+public class D_INF_ImportantJavaClasses {
 
    public static void main(String[] args) {
       /* Konsolenausgaben (PrintStream) */

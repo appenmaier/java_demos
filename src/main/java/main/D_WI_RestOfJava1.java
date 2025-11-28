@@ -13,16 +13,17 @@ import model.VideoGame;
 import model.VideoGameConsole;
 
 /**
- * Java 1 Basics
+ * Rest of Java 1
  *
  * @author Daniel Appenmaier
  * @version 1.0
  *
  */
-public class D900_Java1Basics {
+public class D_WI_RestOfJava1 {
 
    public static void main(String[] args) {
-      /* Klassen: LocalDate, LocalTime, LocalDateTime */
+      /* Klassen: System, LocalDate, LocalTime, LocalDateTime */
+      /* Sprachelement: Bedingte Zuweisungen */
       datesAndTimes();
       System.out.println();
 
@@ -30,7 +31,7 @@ public class D900_Java1Basics {
       randoms();
       System.out.println();
 
-      /* Sprachelement: switch-case */
+      /* Sprachelement: Switch-Ausdruck */
       cases();
       System.out.println();
 
@@ -43,7 +44,7 @@ public class D900_Java1Basics {
       System.out.println();
 
       /* Klassen: ArrayList, LinkedList, List */
-      /* Sprachelement: for-each */
+      /* Sprachelement: For-Each-Schleife */
       lists();
       System.out.println();
 
@@ -56,6 +57,9 @@ public class D900_Java1Basics {
    }
 
    public static void datesAndTimes() {
+      /* Datums- und Zeitangaben */
+      System.out.println(System.currentTimeMillis());
+
       LocalDateTime now = LocalDateTime.now();
       System.out.println("Jahr: " + now.getYear());
       System.out.println("Monat: " + now.getMonth());
@@ -64,8 +68,22 @@ public class D900_Java1Basics {
       System.out.println("Minute: " + now.getMinute());
       System.out.println("Sekunde: " + now.getSecond());
 
-      LocalDate silvester = LocalDate.of(2025, 12, 31);
-      System.out.println("Silvester: " + silvester);
+      LocalDate christmasEve = LocalDate.of(2025, 12, 24);
+      System.out.println("christmasEve: " + christmasEve);
+
+      /* Bedingte Zuweisungen */
+      // ausführliche Schreibweise
+      boolean afternoon;
+      if (now.getHour() >= 12) {
+         afternoon = true;
+      } else {
+         afternoon = false;
+      }
+      System.out.println("afternoon: " + afternoon);
+
+      // Kurzschreibweise
+      afternoon = now.getHour() > 12 ? true : false;
+      System.out.println("afternoon: " + afternoon);
    }
 
    public static void randoms() {
